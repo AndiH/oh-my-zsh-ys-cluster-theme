@@ -13,4 +13,4 @@ Currently supported are Slurm, LSF / IBM Spectrum LSF, PBS. Let me know if you n
 
 ## Installation
 
-Put the `ys-cluster.zsh-theme` into `~/.oh-my-zsh/custom/themes/` and activate it by setting `ZSH_THEME="ys-cluster"` in your `~/.zshrc`.
+Put the `ys-cluster.zsh-theme` into `$ZSH/custom/themes/` and activate it by setting `ZSH_THEME="ys-cluster"` in your `~/.zshrc`.

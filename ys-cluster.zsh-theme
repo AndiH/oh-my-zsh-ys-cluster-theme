@@ -67,13 +67,18 @@ function ys_prompt_jobid() {
 	fi
 	echo -n "${JOBID:+(#$JOBID) }"
 }
+function ys_cluster_name() {
+	if [[ -n $SYSTEMNAME ]]; then
+		echo -n "$SYSTEMNAME // "
+	fi
+}
 # Prompt format: \n # (virtualenv) USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $ 
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
 ${virtualenv_info}\
 %{$fg[cyan]%}%n \
 %{$fg[white]%}@ \
-%{$fg[green]%}$(box_name) \
+%{$fg[green]%}$(ys_cluster_name)$(box_name) \
 %{$fg[blue]%}$(ys_prompt_jobid)\
 %{$fg[white]%}in \
 %{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
